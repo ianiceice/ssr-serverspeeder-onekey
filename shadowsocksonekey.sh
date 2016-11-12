@@ -3,18 +3,6 @@ location=~+
 echo "$location"
 chkconfig iptables off;
 echo "########################欢迎使用shadowsocks搭建到优化一键安装脚本包#########################"
-read -p "即将安装锐速 是否需要更换内核（如果对内核不熟建议更换） :[y/n]"  syskel
-if [[ "$syskel" = "y" ]] ; then 
-    echo "开始更换锐速兼容内核" 
-	rpm -ivh http://soft.91yun.org/ISO/Linux/CentOS/kernel/kernel-firmware-2.6.32-504.3.3.el6.noarch.rpm;
-	rpm -ivh http://soft.91yun.org/ISO/Linux/CentOS/kernel/kernel-2.6.32-504.3.3.el6.x86_64.rpm --force;
-	read -p "更换内核成功！ 要进行下一步请重启 ：是否重启？（重启后请重新运行脚本）[y/n]"  rebootfig
-	if [[ "$rebootfig" = y ]] ; then 
-		reboot;
-		exit;
-	fi
-fi 
-
 read -p "即将安装锐速、ss并优化 是否安装 :[y/n]"  syskel
 if [[ "$syskel" = "y" ]] ; then 
     echo "开始安装锐速" 
